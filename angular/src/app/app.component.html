@@ -1,0 +1,59 @@
+<div class="app">
+  <h1 class="title">
+    Intergalactic Star Wars Database
+  </h1>
+
+  <div class="search">
+    <div class="search__box">
+      <input
+        type="text"
+        class="search__input"
+        placeholder="Search the Star Wars universe..."
+        (keyup)="onKey($event)"
+      />
+
+      <i class="fa fa-search search__icon " (click)="searchHandler()"></i>
+    </div>
+  </div>
+
+  <table class="table">
+    <tr>
+      <th>name</th>
+      <th>height</th>
+      <th>mass</th>
+      <th>hair color</th>
+      <th>skin color</th>
+      <th>eye color</th>
+      <th>birth year</th>
+      <th>gender</th>
+    </tr>
+    <div class="spin" *ngIf="!show; else elseBlock">
+      <div class="spinner">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <ng-template #elseBlock>
+      <tr *ngFor="let person of people">
+        <td data-th="name">{{ person.name }}</td>
+        <td data-th="height">{{ person.height }}</td>
+        <td data-th="mass">{{ person.mass }}</td>
+        <td data-th="hair color">{{ person.hair_color }}</td>
+        <td data-th="skin color">{{ person.skin_color }}</td>
+        <td data-th="eye color">{{ person.eye_color }}</td>
+        <td data-th="birth year">{{ person.birth_year }}</td>
+        <td data-th="gender">{{ person.gender }}</td>
+      </tr>
+    </ng-template>
+  </table>
+</div>

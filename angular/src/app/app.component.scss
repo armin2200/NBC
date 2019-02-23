@@ -1,0 +1,132 @@
+$breakpoint: 720px; // adjust to your needs
+
+.app {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+}
+.search {
+  width: 50%;
+  max-width: 400px;
+  min-width: 200px;
+  &__box {
+    width: 100%;
+    position: relative;
+  }
+  &__input {
+    float: left;
+    font-size: 1rem;
+    width: 100%;
+    border: 3px solid #00b4cc;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px;
+    outline: none;
+    color: #747976;
+    &:focus {
+      color: #34495e;
+    }
+    @media (max-width: $breakpoint) {
+      font-size: 0.7rem;
+    }
+  }
+  &__icon {
+    position: absolute;
+    right: -13px;
+    top: 9px;
+    width: 40px;
+    height: 36px;
+    text-align: center;
+    color: #00b4cc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.table {
+  margin: 1em 0;
+  background: #34495e;
+  color: #fff;
+  border-radius: 0.4em;
+  overflow: hidden;
+  @media (max-width: $breakpoint) {
+    width: 70vw;
+  }
+  tr {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-color: lighten(#34495e, 10%);
+  }
+
+  th {
+    display: none;
+    text-transform: capitalize;
+  }
+
+  td {
+    display: block;
+
+    &:first-child {
+      padding-top: 0.5em;
+    }
+    &:last-child {
+      padding-bottom: 0.5em;
+    }
+
+    &:before {
+      content: attr(data-th) ': ';
+      font-weight: bold;
+      width: 6.5em;
+      display: inline-block;
+      @media (min-width: $breakpoint) {
+        display: none;
+      }
+    }
+  }
+  th,
+  td {
+    text-align: left;
+    margin: 0.5em 1em;
+
+    @media (min-width: $breakpoint) {
+      display: table-cell;
+
+      padding: 0.7rem 1em !important;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+  th,
+  td:before {
+    color: #dd5;
+  }
+}
+
+.title {
+  font-weight: normal;
+  letter-spacing: -1px;
+  color: #34495e;
+  @media (max-width: $breakpoint) {
+    font-size: 170%;
+  }
+}
+
+.spin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.notFound {
+  display: block;
+  margin: 10px;
+}

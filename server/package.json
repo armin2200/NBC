@@ -1,0 +1,41 @@
+{
+  "name": "server",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "lint": "eslint bin/www app.js routes/**/*.js authentication/**/*.js api-client/**/*.js spec/**/*.js configuration/**/*.js",
+    "test": "jasmine",
+    "citest": "nyc --exclude 'spec' --exclude 'coverage' -a --reporter=lcov jasmine"
+  },
+  "dependencies": {
+    "@reactivex/rxjs": "^5.5.8",
+    "client-oauth2": "^4.2.0",
+    "connect-redis": "^3.4.0",
+    "cookie-parser": "~1.4.3",
+    "dd-trace": "^0.6.1",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "express-session": "^1.15.6",
+    "http-errors": "~1.6.2",
+    "jade": "~1.11.0",
+    "jsonwebtoken": "^8.3.0",
+    "lodash": "^4.17.11",
+    "moment": "^2.22.2",
+    "morgan": "~1.9.0",
+    "redis": "^2.8.0",
+    "request": "^2.85.0",
+    "s3-proxy": "^1.1.1",
+    "solr-query-builder": "^1.0.1",
+    "uid-safe": "^2.1.5",
+    "winston": "^3.1.0"
+  },
+  "devDependencies": {
+    "eslint": "4.9.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "2.7.0",
+    "jasmine": "^3.1.0",
+    "nock": "^9.4.1",
+    "nyc": "^12.0.2"
+  }
+}
